@@ -1,0 +1,8 @@
+{
+    "rulesDirectory": [
+        "../dist/"
+    ],
+    "rules": {
+        "no-lazy-module-paths": [true, "async"]
+    }
+}
