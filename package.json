@@ -1,9 +1,9 @@
 {
   "name": "@phenomnomnominal/angular-lazy-routes-fix",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "TSLint rule/fix for Angular lazy-loaded routes",
-  "main": "dist/src/index.js",
-  "typings": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "Craig Spence <craigspence0@gmail.com>",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "@phenomnomnominal/tsquery": "^3.0.0"
   },
   "files": [
-    "dist/src"
+    "dist"
   ],
   "peerDependencies": {
     "tslint": "^5.6.0"

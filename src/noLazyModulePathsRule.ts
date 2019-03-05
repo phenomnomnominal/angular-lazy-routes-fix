@@ -6,7 +6,7 @@ import { SourceFile } from 'typescript';
 // Constants:
 const LOAD_CHILDREN_SPLIT = '#';
 const LOAD_CHILDREN_VALUE_QUERY = `StringLiteral[value=/.*${LOAD_CHILDREN_SPLIT}.*/]`;
-const LOAD_CHILDREN_ASSIGNMENT_QUERY = `ObjectLiteralExpression > PropertyAssignment:has(Identifier[name="loadChildren"]):has(${LOAD_CHILDREN_VALUE_QUERY})`;
+const LOAD_CHILDREN_ASSIGNMENT_QUERY = `PropertyAssignment:not(:has(Identifier[name="children"])):has(Identifier[name="loadChildren"]):has(${LOAD_CHILDREN_VALUE_QUERY})`;
 
 const FAILURE_MESSAGE = 'Found magic `loadChildren` string. Use a function with `import` instead.';
 

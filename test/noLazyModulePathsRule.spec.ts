@@ -26,6 +26,29 @@ describe('no-lazy-module-paths', () => {
         expect(error.getFailure()).to.include('Found magic `loadChildren` string. Use a function with `import` instead.');
     });
 
+    it('should handle `children`', () => {
+        const sourceFile = ast(`
+            import { Route } from '@angular/router';
+
+            const routes: Array<Route> = [
+                {
+                    path: '',
+                    children: [{
+                        path: 'child',
+                        loadChildren: './lazy/lazy.module#LazyModule'
+                    }]
+                }
+            ];
+        `);
+
+        const rule = new Rule({ ruleArguments: [], ruleName: 'no-lazy-module-paths', ruleSeverity: 'error', disabledIntervals: [] });
+        const errors = rule.apply(sourceFile);
+        const [error] = errors;
+
+        expect(errors.length).to.equal(1);
+        expect(error.getFailure()).to.include('Found magic `loadChildren` string. Use a function with `import` instead.');
+    });
+
     it('should create a lint fix with promises by default', () => {
         const sourceFile = ast(`
             import { Route } from '@angular/router';

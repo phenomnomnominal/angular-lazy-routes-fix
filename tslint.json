@@ -1,5 +1,4 @@
 {
-    "extends": ["./src/tslint.json"],
     "rules": {
         "array-type": [true, "generic"],
         "arrow-return-shorthand": true,
