@@ -99,7 +99,7 @@ describe('no-lazy-module-paths', () => {
             const routes: Array<Route> = [
                 {
                     path: '',
-                    loadChildren: () => import('./lazy/lazy.module).then(m => m.LazyModule)
+                    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
                 }
             ];
         `);
@@ -118,7 +118,7 @@ describe('no-lazy-module-paths', () => {
                 {
                     path: '',
                     loadChildren: () => {
-                        const { LazyModule } = await import('./lazy/lazy.module);
+                        const { LazyModule } = await import('./lazy/lazy.module');
                         return LazyModule;
                     }
                 }
