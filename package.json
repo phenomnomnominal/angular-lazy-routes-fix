@@ -15,7 +15,7 @@
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "tslint --project ./tsconfig.json -c ./tslint.json 'src/**/*.ts'",
     "lint:test": "tslint --project ./tsconfig.json -c ./tslint.json 'test/**/*.ts'",
-    "lint:fix": "npm run lint:src:fix && npm run lint:test",
+    "lint:fix": "npm run lint:src:fix && npm run lint:test:fix",
     "lint:src:fix": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "lint:test:fix": "tslint -c tslint.json 'test/**/*.ts' --fix",
     "test": "jest",
